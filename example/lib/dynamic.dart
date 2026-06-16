@@ -9,7 +9,7 @@ class DynamicScreen extends StatefulWidget {
 }
 
 class _DynamicScreenState extends State<DynamicScreen> {
-  String _searchTerm;
+  String? _searchTerm;
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +47,11 @@ class _DynamicScreenState extends State<DynamicScreen> {
   }
 
   Widget _buildResult(BuildContext context) {
+    final searchTerm = _searchTerm;
+    if (searchTerm == null) return Container();
+
     try {
-      final icon = WeatherIcons.fromString(_searchTerm);
+      final icon = WeatherIcons.fromString(searchTerm);
 
       return Container(
         padding: EdgeInsets.only(top: 32),

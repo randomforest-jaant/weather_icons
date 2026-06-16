@@ -139,7 +139,7 @@ function generateIcon(title, code) {
 
   const icon = `
   ${comment}
-  static const IconData ${name} = const WIData(0x${code});`.trimLeft()
+  static const IconData ${name} = IconData(0x${code}, fontFamily: WIData.FONT_FAMILY, fontPackage: WIData.FONT_PACKAGE);`.trimLeft()
 
   if (verbose) console.log(`Generating: ${icon}`)
   return icon

@@ -55,11 +55,4 @@ void main() {
     final span = test.text as TextSpan;
     expect(span.style!.color, expected);
   });
-
-  test('Creation of a WIData object', () {
-    final data = WIData(42);
-    expect(data.codePoint, 42);
-    expect(data.fontFamily, WIData.FONT_FAMILY);
-    expect(data.fontPackage, WIData.FONT_PACKAGE);
-  });
 }
